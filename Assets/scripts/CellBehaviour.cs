@@ -7,11 +7,21 @@ public class CellBehaviour : MonoBehaviour
     public Color hoverColor;
     public Color selectedColor;
 
+    [SerializeField] private AudioClip hoverSoundClip;
+
     private MeshRenderer meshRenderer;
     private XRGrabInteractable grabInteractable;
 
+
+void Start() {
+    if (hoverSoundClip != null)
+            {
+                SoundFXManager.instance.PlaySoundFXClip(hoverSoundClip, transform, 1f);
+            }
+}
+
     void Awake()
-    {   
+    {
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.material.color = defaultColor;
 
@@ -29,23 +39,36 @@ public class CellBehaviour : MonoBehaviour
 
     private void OnRelease(SelectExitEventArgs args)
     {
-        if (!grabInteractable.isHovered) {
+        if (!grabInteractable.isHovered)
+        {
             meshRenderer.material.color = defaultColor;
-        } else {
+        }
+        else
+        {
             meshRenderer.material.color = hoverColor;
         }
     }
 
-    public void OnHoverEnter(HoverEnterEventArgs args) {
-        if (!grabInteractable.isSelected) { 
+    public void OnHoverEnter(HoverEnterEventArgs args)
+    {
+        if (!grabInteractable.isSelected)
+        {
             meshRenderer.material.color = hoverColor;
+            if (hoverSoundClip != null)
+            {
+                SoundFXManager.instance.PlaySoundFXClip(hoverSoundClip, transform, 1f);
+            }
         }
     }
 
-    public void OnHoverExit(HoverExitEventArgs args) {
-        if (!grabInteractable.isSelected) { 
+    public void OnHoverExit(HoverExitEventArgs args)
+    {
+        if (!grabInteractable.isSelected)
+        {
             meshRenderer.material.color = defaultColor;
-        } else {
+        }
+        else
+        {
             meshRenderer.material.color = selectedColor;
         }
     }

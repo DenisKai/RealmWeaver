@@ -328,6 +328,7 @@ MonoBehaviour:
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 0, g: 1, b: 0.039215803, a: 0.62352943}
   selectedColor: {r: 0, g: 0.18643188, b: 1, a: 0}
+  hoverSoundClip: {fileID: 8300000, guid: 5be65b039547b4e69bd546202ab789b5, type: 3}
 --- !u!1 &9081103753767188387
 GameObject:
   m_ObjectHideFlags: 0

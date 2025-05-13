@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "RealmWeaver_urp.sln"
+    "dotnet.defaultSolution": "RealmWeaver.sln"
 }
