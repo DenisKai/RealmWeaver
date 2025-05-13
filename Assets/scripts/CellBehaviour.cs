@@ -12,14 +12,6 @@ public class CellBehaviour : MonoBehaviour
     private MeshRenderer meshRenderer;
     private XRGrabInteractable grabInteractable;
 
-
-void Start() {
-    if (hoverSoundClip != null)
-            {
-                SoundFXManager.instance.PlaySoundFXClip(hoverSoundClip, transform, 1f);
-            }
-}
-
     void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
