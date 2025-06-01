@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 5146338304051061261}
   - component: {fileID: 4655926295811908934}
-  - component: {fileID: 175541559353997483}
+  - component: {fileID: -607837318244992855}
   - component: {fileID: -7206158831512485203}
   - component: {fileID: 3770149975890680462}
   - component: {fileID: 720148059804306590}
   - component: {fileID: -1427012298731764155}
+  - component: {fileID: -7588061858551433685}
   m_Layer: 0
   m_Name: FloorHandle
   m_TagString: Untagged
@@ -64,8 +65,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &175541559353997483
-MeshCollider:
+--- !u!136 &-607837318244992855
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -82,10 +83,11 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &-7206158831512485203
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -154,7 +156,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -311,3 +313,19 @@ MonoBehaviour:
   m_MinimumScaleRatio: 0.25
   m_MaximumScaleRatio: 2
   m_ScaleMultiplier: 0.25
+--- !u!114 &-7588061858551433685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666340921203797080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1036f533ccf310d4a8b17fffbcfcf0c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultColor: {r: 0.509434, g: 0.49261305, b: 0.49261305, a: 1}
+  hoverColor: {r: 0.048104316, g: 0.4433962, b: 0.16225274, a: 1}
+  selectedColor: {r: 0, g: 0.47910976, b: 1, a: 1}
+  hoverSoundClip: {fileID: 0}

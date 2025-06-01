@@ -54,7 +54,7 @@ MonoBehaviour:
     type: 3}
   cellPrefab: {fileID: 3054643146093459036, guid: a9dc5823cf837614896f00f4ca06b90b,
     type: 3}
-  cameraOffset: {x: 0, y: 0.3, z: 0.25}
-  rows: 20
-  columns: 20
+  cameraOffset: {x: 0, y: -0.3, z: 0.25}
+  rows: 30
+  columns: 30
   cellSpacing: 0.002

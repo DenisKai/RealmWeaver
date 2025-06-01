@@ -24,6 +24,15 @@ public class InteractorSwitcher : MonoBehaviour
     public GameObject xAxis;
     public GameObject zAxis;
 
+    [Header("Slopebuttons")]
+    public Toggle slopeOption;
+
+    [Header("MassMove Script")]
+    public MassMove L_massMove_rect;
+    public MassMove L_massMove_circle;
+    public MassMove R_massMove_rect;
+    public MassMove R_massMove_cirlce;
+
     public enum Interactormode {Point, Rectangle, Circle};
 
     // Start is called before the first frame update
@@ -33,6 +42,7 @@ public class InteractorSwitcher : MonoBehaviour
         point.onValueChanged.AddListener(delegate {ToggleInteractor(point, Interactormode.Point);});
         rect.onValueChanged.AddListener(delegate {ToggleInteractor(rect, Interactormode.Rectangle);});
         circle.onValueChanged.AddListener(delegate {ToggleInteractor(circle, Interactormode.Circle);});
+        slopeOption.onValueChanged.AddListener(ToggleSlopeMode);
     }
 
     private void ToggleInteractor(Toggle toggle, Interactormode mode) {
@@ -49,19 +59,30 @@ public class InteractorSwitcher : MonoBehaviour
                 R_Point.SetActive(true);
                 xAxis.SetActive(false);
                 zAxis.SetActive(false);
+                slopeOption.gameObject.SetActive(false);
             } else if (mode == Interactormode.Rectangle) {
                 L_Box.SetActive(true);
                 R_Box.SetActive(true);
                 xAxis.SetActive(true);
                 zAxis.SetActive(true);
+                slopeOption.gameObject.SetActive(true);
             } else if (mode == Interactormode.Circle) {
                 L_Circle.SetActive(true);
                 R_Circle.SetActive(true);
                 xAxis.SetActive(true);
                 zAxis.SetActive(true);
+                slopeOption.gameObject.SetActive(true);
             } else {
                 Debug.Log("Invalid collider selected.");
             }
         }
+    }
+
+    public void ToggleSlopeMode(bool value)
+    {
+        L_massMove_rect.isSlopeMode = value;
+        L_massMove_circle.isSlopeMode = value;
+        R_massMove_rect.isSlopeMode = value;
+        R_massMove_cirlce.isSlopeMode = value;
     }
 }
