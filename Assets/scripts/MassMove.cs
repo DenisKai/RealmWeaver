@@ -89,7 +89,7 @@ public class MassMove : MonoBehaviour
 
         // wait until all cells are deselected
         yield return new WaitForEndOfFrame();
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.025f);
         yield return new WaitUntil(() => interactor.interactablesSelected.Count == 0);
         yield return new WaitUntil(() => interactables.All(i => !i.isSelected));
         ApplySlopeToAllSelectedCells(m_slopeSelection);
